@@ -1,0 +1,120 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style>
+body{
+  /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+
+  /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+
+  /* Firefox 3.6+ */
+    background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+
+  /* IE 10 */
+    background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+    height:600px;
+}
+
+.form-login{
+	margin-top: 250px;
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+	
+}
+.container{
+margin-left: 30px;}
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+label.label-floatlabel {
+    font-weight: bold;
+    color: #46b8da;
+    font-size: 11px;
+}
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+.form-control {
+    border-radius: 10px;
+}
+.wrapper {
+    text-align: center;
+}
+</style>
+
+</head>
+<body>
+<script type="text/javascript" src="floatlabels.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+		<div class="form-login">
+		<form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate align="center">
+            
+            <h4 id="h4">Admin Login</h4>
+            <input type="text" name="user" class="form-control input-sm chat-input" ng-model="user"  placeholder="username" required/>
+			<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Username is required.</span>
+</span>
+            </br>
+            <input type="password" name="pwd" class="form-control input-sm chat-input" ng-model="pwd"  placeholder="password" required/>
+			<span style="color:red" ng-show="myForm.pwd.$dirty && myForm.pwd.$invalid">
+<span ng-show="myForm.pwd.$error.required">Password is required.</span>
+</span>
+          
+			<div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+            <div class="wrapper">
+            <span class="group-btn">     
+                <a href="#" class="btn btn-primary btn-md" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||
+myForm.pwd.$dirty && myForm.pwd.$invalid" ng-click="submit()"> Login <i class="fa fa-sign-in"></i></a>
+            </span>
+			
+            </div>
+            </div>
+        </form>
+       	   </div>
+		   
+    </div>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope,$window) {
+    var user1 = 'nikhitha';
+    var pwd1 = 'abc';
+	$scope.submit=function(){
+	if(user1==$scope.user && pwd1==$scope.pwd){
+	$window.location='studenthome.html';
+	}
+	else{
+	alert("invalid username and password");
+	}
+	}
+});
+</script>
+</body>
+</html>

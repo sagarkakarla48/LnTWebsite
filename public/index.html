@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>SmartMenus jQuery Website Menu - Keyboard Addon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+
+<!-- SmartMenus core CSS (required) -->
+<link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/css/sm-blue.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.sm-blue{
+    border-radius: 1px !important;    
+}
+#main-nav{
+    background: #024d87 url(/images/navigationBg.png) right 0 no-repeat;
+        
+}
+
+</style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+<div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
+                        <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
+<nav id="main-nav" role="navigation">
+  <!-- Sample menu definition -->
+  <ul id="main-menu" class="sm sm-blue">
+    <li><h2><a href="/index.html">Home</a></h2></li>
+    <li><h2><a href="#">About Us</a></h2>
+    </li>
+    <li><h2><a href="#">Industry</a></h2></li>
+    <li><h2><a href="#">Services</a></h2>
+      
+    </li>
+    <li><h2><a href="#">Solutions</a></h2></li>
+    <li><h2><a href="#">Investors</a></h2></li>
+    <li><h2><a href="#">Newsroom</a></h2></li>
+    <li><h2><a href="#">Insight</a></h2></li>
+    <li><h2><a href="#">Careers</a></h2></li>
+    <li><h2><a href="#">Contact Us</a></h2></li>
+    <li><h2><a href="#">Login</a></h2>
+      <ul>
+        <li><a href="/login.html">Client Login</a></li>
+        <li><a href="/adminlogin.html">Admin login</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="" >
+    <div id="main">
+      <section>
+        <div id="divid" class="">
+          <ul id="ulid" class="">
+                <li ng-repeat="image in carousalimages">
+                <img src="{{image.name}}" />
+                </li>
+            </ul>
+        </div>
+      </section>
+    </div>
+    </div>
+
+<!-- Footer Starts--> 
+<div class="row footer" style="clear:both">
+
+<div class="col-sm-12">
+<div class="col-sm-3">
+
+                        <h3><a href="#">About Us</a></h3>
+                            <ul>
+                                    <li>
+                                        <a href="#">Company Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Board of Directors</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Financials</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Corporate Governance</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Accolades</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alliances</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Innovation</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Quality Management</a>
+                                    </li>
+                            </ul>
+
+              
+</div>
+<div class="col-sm-3">
+
+                        <h3><a href="#">Industry</a></h3>
+                            <ul>
+                                    <li>
+                                        <a href="#">Industrial Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Medical Devices</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Process Industry</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Telecom &amp; Hi-tech</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Transportation</a>
+                                    </li>
+                            </ul>
+
+                    
+</div>
+<div class="col-sm-3">
+
+                        <h3><a href="#">Services</a></h3>
+                            <ul>
+                                    <li>
+                                        <a href="#">Embedded System and Applications</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Engineering Process Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mechanical Engineering</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Product Lifecycle Management (PLM)</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Consulting Services</a>
+                                    </li>
+                            </ul>
+
+                    
+</div>
+<div class="col-sm-3">
+
+                        <h3><a href="#">Solutions</a></h3>
+                            <ul>
+                                    <li>
+                                        <a href="#">Engineering Analytics</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Internet of Things and Machine to Machine</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Power Electronics</a>
+                                    </li>
+                            </ul>
+
+                    
+</div>
+</div>
+<div class="col-sm-12">
+<div class="col-sm-3">
+                        <h3><a href="#">Insights</a></h3>
+                            <ul>
+                                    <li>
+                                        <a href="#">Testimonials</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Case Studies</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Whitepapers</a>
+                                    </li>
+                            </ul>              
+</div>
+<div class="col-sm-3">
+
+                        <h3><a href="#">Careers</a></h3>
+                            <ul>
+                                    <li>
+                                        <a href="#">Working with us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Learning Management</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Recruitment Events</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Employee Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Diversity</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Job Opportunities</a>
+                                    </li>
+                            </ul>
+
+                    
+</div>
+</div>
+</div>
+
+ <footer>
+      <div class="col-sm-12" style="bottom:0px;background: #d4d4d4;">
+        <p class="">© 2016 LARSEN & TOUBRO LIMITED. All rights reserved</p>
+      </div>
+    </footer>
+
+
+<!-- Footer Ends-->
+<!-- =============================================================================== -->
+<!-- ================= YOU DO NOT NEED ANYTHING AFTER THIS COMMENT ================= -->
+<!-- =============================================================================== -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
+
+    <!-- FlexSlider -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script defer src="/js/jquery.flexslider.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/controller.js"></script>
+  <!-- SmartMenus jQuery init -->
+<script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
+    });
+</script>
+<body>
+</html>

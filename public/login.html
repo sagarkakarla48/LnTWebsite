@@ -1,0 +1,142 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- SmartMenus core CSS (required) -->
+<link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/css/sm-blue.css" rel="stylesheet" type="text/css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
+
+<style>
+body{
+  /* Safari 4-5, Chrome 1-9 */
+    <!-- background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727)); -->
+
+  /* Safari 5.1+, Chrome 10+ */
+    <!-- background: -webkit-radial-gradient(circle, #1a82f7, #2F2727); -->
+
+  /* Firefox 3.6+ */
+   <!--  background: -moz-radial-gradient(circle, #1a82f7, #2F2727); -->
+
+  /* IE 10 */
+    <!-- background: -ms-radial-gradient(circle, #1a82f7, #2F2727); -->
+    height:600px;
+}
+
+.form-login{
+	margin-top: 250px;
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+	
+}
+.container{
+margin-left: 30px;}
+}
+
+.centered-form .panel{
+
+}
+
+label.label-floatlabel {
+    font-weight: bold;
+    color: #46b8da;
+    font-size: 11px;
+}
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+.form-control {
+    border-radius: 10px;
+}
+.wrapper {
+    text-align: center;
+}
+</style>
+</head>
+<body ng-app="">
+
+<div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
+                        <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
+<nav id="main-nav" role="navigation">
+  <!-- Sample menu definition -->
+  <ul id="main-menu" class="sm sm-blue">
+    <li><h2><a href="/index.html">Home</a></h2></li>
+    <li><h2><a href="#">About Us</a></h2>
+    </li>
+    <li><h2><a href="#">Industry</a></h2></li>
+    <li><h2><a href="#">Services</a></h2>
+      
+    </li>
+    <li><h2><a href="#">Solutions</a></h2></li>
+    <li><h2><a href="#">Investors</a></h2></li>
+    <li><h2><a href="#">Newsroom</a></h2></li>
+    <li><h2><a href="#">Insight</a></h2></li>
+    <li><h2><a href="#">Careers</a></h2></li>
+    <li><h2><a href="#">Contact Us</a></h2></li>
+    <li><h2><a href="#">Login</a></h2>
+      <ul>
+        <li><a href="/login.html">Client Login</a></li>
+        <li><a href="/adminlogin.html">Admin login</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+		<form  name="myForm" novalidate align="center">
+            <div class="form-login">
+			
+            <h4 id="h4">Welcome back.</h4>
+            <input type="text"  class="form-control input-sm" name="user" ng-model="user" placeholder="Username" required>
+<span style="color:red" ng-show="myForm.user.$touched && myForm.user.$invalid"> username is required.</span>
+            </br>
+            <input type="password" name="pwd" class="form-control input-sm" ng-model="pwd" placeholder="Password" required>
+<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">password is required.</span>
+          
+			<div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+            <div class="wrapper">
+            <span class="group-btn">     
+                <a href="#" class="btn btn-primary btn-md"> Login <i class="fa fa-sign-in"></i></a>
+            </span>
+			<div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Forgot Password?</button>
+                                
+                            </div>
+							<div>
+                                <p>Are you new client? <a href="signup.html"><b>Sign Up</b></span></a> here</p>
+                                
+                            </div>
+            </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
