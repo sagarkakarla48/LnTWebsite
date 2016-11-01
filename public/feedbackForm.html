@@ -1,10 +1,12 @@
-<html ng-app=''>
+<html ng-app='feedbackApp' ng-controller="feedbackController">
 <head>
-<script src='angular.min.js'></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="/feedbackcontroller.js"></script>
 <style>
 #myModal{
 display:none;
@@ -59,10 +61,10 @@ $('#myModal').modal('show');
 <head>
 <body>
 <br>
-<div id='div1'>
-<img src='images/logo.jpg'>
+<!-- <div id='div1'>
+<img src='/css/images/logo.jpg'>
 
-<div>
+<div> -->
 
 
 
@@ -73,52 +75,52 @@ Please help us by taking a few minutes to tell us about the service
 that you have received so far.We appreciate your business and want to make sure we meet your expectations.</p>
 <form name='f1' >
 <p>Your First impression about our company?</p>
-<textarea rows='5' cols='35' ng-model='q1' name='q1' required></textarea>
+<textarea rows='5' cols='35' ng-model='feedback.q1' name='q1' required></textarea>
 
 <p>Do you find our work force is technically Sound?</p>
-<p><input type='radio' ng-model='q2' name='q2'value='extreamly good' required>Extreamly good<br>
-<input type='radio' ng-model='q2' name='q2' value='good'>good<br>
-<input type='radio' ng-model='q2' name='q2' value='adequate'>Adequate<br>
-<input type='radio' ng-model='qq2' name='q2' value='poor'>Poor<br></p>
+<p><input type='radio' ng-model='feedback.q2' name='q2'value='extreamly good' required>Extreamly good<br>
+<input type='radio' ng-model='feedback.q2' name='q2' value='good'>good<br>
+<input type='radio' ng-model='feedback.q2' name='q2' value='adequate'>Adequate<br>
+<input type='radio' ng-model='feedback.q2' name='q2' value='poor'>Poor<br></p>
 
 <p>Would you use our service in the future?</p>
 <p>
-<input type='radio' ng-model='q3' name='q3' value='definitely' required> Definitely<br>
-<input type='radio' ng-model='q3' name='q3' value='Probably'>Probably<br>
-<input type='radio' ng-model='q3' name='q3' value='Not sure'>Not sure<br>
-<input type='radio' ng-model='q3' name='q3' value='probably not'>probably not<br>
-<input type='radio' ng-model='q3' name='q3' value='Definitely Not'>Definitely Not</p>
+<input type='radio' ng-model='feedback.q3' name='q3' value='definitely' required> Definitely<br>
+<input type='radio' ng-model='feedback.q3' name='q3' value='Probably'>Probably<br>
+<input type='radio' ng-model='feedback.q3' name='q3' value='Not sure'>Not sure<br>
+<input type='radio' ng-model='feedback.q3' name='q3' value='probably not'>probably not<br>
+<input type='radio' ng-model='feedback.q3' name='q3' value='Definitely Not'>Definitely Not</p>
 <p>
 <p>Thinking of similar products / services offered by other companies, how would you compare the product 
 / service offered by our company?</p>
-<p><input type='radio' ng-model='q4' name='q4' value='much better' required>Much Better<br>
-<input type='radio' ng-model='q4' name='q4' value='somewhat better'>Somewhat Better<br>
-<input type='radio' ng-model='q4' name='q4' value='about the same'>About the same<br>
-<input type='radio' ng-model='q4' name='q4' value='somewhat worse'>Somewhat Worse<br>
-<input type='radio' ng-model='q4' name='q4' value='much worse'>Much Worse</p>
+<p><input type='radio' ng-model='feedback.q4' name='q4' value='much better' required>Much Better<br>
+<input type='radio' ng-model='feedback.q4' name='q4' value='somewhat better'>Somewhat Better<br>
+<input type='radio' ng-model='feedback.q4' name='q4' value='about the same'>About the same<br>
+<input type='radio' ng-model='feedback.q4' name='q4' value='somewhat worse'>Somewhat Worse<br>
+<input type='radio' ng-model='feedback.q4' name='q4' value='much worse'>Much Worse</p>
 <p>Overall, how satisfied were you with the service?</p>
 <p>
-<input type='radio' ng-model='q5' name='q5'value='very satisfied' required> Very Satisfied<br>
-<input type='radio' ng-model='q5' name='q5'value='satisfied'>Satisfied<br>
-<input type='radio' ng-model='q5' name='q5'value='Netral'>Neutral<br>
-<input type='radio' ng-model='q5' name='q5'value='unsatisfied'>UnSatisfied<br>
-<input type='radio' ng-model='q5' name='q5' value='very unsatisfied'>very UnSatisfied</p>
+<input type='radio' ng-model='feedback.q5' name='q5'value='very satisfied' required> Very Satisfied<br>
+<input type='radio' ng-model='feedback.q5' name='q5'value='satisfied'>Satisfied<br>
+<input type='radio' ng-model='feedback.q5' name='q5'value='Netral'>Neutral<br>
+<input type='radio' ng-model='feedback.q5' name='q5'value='unsatisfied'>UnSatisfied<br>
+<input type='radio' ng-model='feedback.q5' name='q5' value='very unsatisfied'>very UnSatisfied</p>
 
 <p>Would you recommend our product / service to colleagues or contacts within your industry?</p>
 <p>
-<input type='radio' ng-model='q6' name='q6'value='definitely' required>yes,I would Definitely<br>
-<input type='radio' ng-model='q6' name='q6'value='Probably'>May not<br>
+<input type='radio' ng-model='feedback.q6' name='q6'value='definitely' required>yes,I would Definitely<br>
+<input type='radio' ng-model='feedback.q6' name='q6'value='Probably'>May not<br>
 </p>
 <p>How responsive is LTTS in supporting srvices and solving issues?</p>
 <p>
-<input type='radio' ng-model='q7' name='q7' value='very instantive' required > Very Instantive<br>
-<input type='radio' ng-model='q7' name='q7' value='instantive'>Instantive<br>
-<input type='radio' ng-model='q7' name='q7' value='delay'>Delay<br>
-<input type='radio' ng-model='q7' name='q7' value='not responsive' >Not Respondive<br>
+<input type='radio' ng-model='feedback.q7' name='q7' value='very instantive' required > Very Instantive<br>
+<input type='radio' ng-model='feedback.q7' name='q7' value='instantive'>Instantive<br>
+<input type='radio' ng-model='feedback.q7' name='q7' value='delay'>Delay<br>
+<input type='radio' ng-model='feedback.q7' name='q7' value='not responsive' >Not Respondive<br>
 <p>Do you have any suggestions to improve our product and service?</p>
-<textarea rows='5' cols='35' ng-model='q8' name='q8' required></textarea><br><br>
+<textarea rows='5' cols='35' ng-model='feedback.q8' name='q8' required></textarea><br><br>
 
-<input type='submit' value='Submit'class="btn btn-primary" id='sub1' ng-disabled='f1.$invalid'>
+<input type='button' value='Submit' ng-click="addFeedback();" class="btn btn-primary" id='sub1' ng-disabled='f1.$invalid'>
 
 <input type='reset' value='Reset'class="btn btn-primary" >
 </form>
