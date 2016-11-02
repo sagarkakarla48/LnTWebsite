@@ -8,7 +8,7 @@ app.controller("pageCtrl",["$scope","$http",function($scope,$http){
 	$scope.filteredItems=data;
 
 	$scope.openpopup=function(id){
-		alert("jjjj");
+		//document.getElementById("myModal").modal('show');
 	}
 	
 })

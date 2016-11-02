@@ -7,14 +7,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-    <script type="text/javascript" src="paginationCtrl.js"></script>
+  <script type="text/javascript" src="paginationCtrl.js"></script>
 	<script src="dirPagination.js"></script>
   
   
 <script>
-function openpopup(id){
-alert(id);
-}
 </script>
   </head>
 
@@ -53,7 +50,7 @@ alert(id);
                                     <td>{{user.q8}}</td>
                                                                      
 									                 <td>{{user.q5}}</td>
-                                    <td><a href="index.html#?id={{user._id}}" target="_blank"><input type='button' value='More info'class="btn btn-primary sub1"></a></td>                                </tr>
+                                    <td><input type='button' value='More info'class="btn btn-primary sub1" ng-click="openpopup(user._id)"></td>                                </tr>
                             </tbody>
 
                         </table>
