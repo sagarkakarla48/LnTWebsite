@@ -99,7 +99,7 @@ h4 {
             <div class="form-login">
 			
             <h4 id="h4">Welcome back.</h4>
-            <input type="text"  class="form-control input-sm" name="user" ng-model="user" placeholder="Username" required>
+            <input type="text"  class="form-control input-sm" name="email" ng-model="email" placeholder="Username" required>
 <span style="color:red" ng-show="myForm.user.$touched && myForm.user.$invalid"> username is required.</span>
             </br>
             <input type="password" name="pwd" class="form-control input-sm" ng-model="pwd" placeholder="Password" required>
@@ -136,7 +136,7 @@ h4 {
 <script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/clientlogin.js"></script>
+<script src="/clientlogincontroller.js"></script>
 <script type="text/javascript">
     $(function() {
         $('#main-menu').smartmenus({

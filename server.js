@@ -4,6 +4,7 @@ var mongoose=require("mongoose");
 var bodyParser=require("body-parser");
 var Feedback=require("./models/feedbackdetails");
 var ClientLogin=require("./models/clientlogin");
+var custom=require("./models/clientsignup");
 var PORT=process.env.PORT || 3000;
 var path = require('path');
 
@@ -27,16 +28,31 @@ Feedback.addContact(body,function(err,data){
 })
 })
 
-app.post("/clientlogindetails",function(req,res){
+app.get("/clientlogindetails/:email/:pwd",function(req,res){
 
-ClientLogin.getClientDetails(body,function(err,data){
+var email=req.params.email;
+var pwd=req.params.pwd;
+custom.getClientDetails(email,pwd,function(err,data){
 	if(err){
 		throw err;
 	}
+	console.log(data);
 		res.json(data);
-})
-})
 
+})
+})
+app.post("/signup",function(req,res){
+
+var body=req.body;//using body parser
+custom.addDetails(body,function(err,data){
+
+	if(err){
+		throw err;
+	}
+	console.log(data);
+	res.json(data);
+})
+})
 
 app.listen(PORT,function(){
 	console.log("Server is running in number "+PORT);
