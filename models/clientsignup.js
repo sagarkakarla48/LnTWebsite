@@ -41,3 +41,10 @@ module.exports.getClientdetails=function(id,callback){
  	var query={_id:id}
  	custom.findById(query,callback)
  }
+
+ module.exports.getClientData=function(id,callback){
+ 	//to fetch  single record we use findbyid
+ 	var query={_id:id}
+ 	console.log("inside modek "+id);
+ 	custom.findById(query,callback)
+ }

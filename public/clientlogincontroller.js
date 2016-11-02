@@ -9,7 +9,7 @@ app.controller("loginController",["$scope","$http",function($scope,$http){
 		if(response!=null){
 			alert("Login successful");
 			$scope.resdata=response;
-			window.location="clientprofile.html";
+			window.location="clientprofile.html#?id="+response._id;
 		}else{
 			alert("Username or password incorrect");
 		}

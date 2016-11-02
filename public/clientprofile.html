@@ -4,7 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- SmartMenus core CSS (required) -->
 <link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
 
@@ -18,9 +17,7 @@
 
 <!-- SmartMenus jQuery Keyboard Addon -->
 <script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="client.js"></script>
+<script type="text/javascript" src="/clientcontroller.js"></script>
 <style>
 .user-row {
     margin-bottom: 14px;
@@ -60,7 +57,7 @@
 margin-top:80px;}
 </style>
 </head>
-<body>
+<body ng-app="myapp" ng-controller="mycntrl">
 <div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
                         <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
 <nav id="main-nav" role="navigation">
@@ -102,7 +99,7 @@ margin-top:80px;}
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title"></h3>
+              <h3 class="panel-title"><b>{{clienttable.fname + " " + clienttable.lname}}</b></h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -125,16 +122,16 @@ margin-top:80px;}
                     <tbody>
                       <tr>
                         <td>First Name:</td>
-                        <td></td>
+                        <td>{{clienttable.fname}}</td>
                       </tr>
                       <tr>
                         <td>Last Name</td>
-                        <td></td>
+                        <td>{{clienttable.lname}}</td>
                       </tr>
                       
                         <tr>
                         <td>Email</td>
-                        <td></a></td>
+                        <td>{{clienttable.email}}</a></td>
                       </tr>
                      
                     </tbody>
@@ -152,19 +149,7 @@ margin-top:80px;}
         </div>
       </div>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<!-- SmartMenus jQuery plugin -->
-<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
-
-<!-- SmartMenus jQuery Keyboard Addon -->
-<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
-
-    <!-- FlexSlider -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script defer src="/js/jquery.flexslider.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/controller.js"></script>
-  <!-- SmartMenus jQuery init -->
+    <!-- SmartMenus jQuery init -->
 <script type="text/javascript">
     $(function() {
         $('#main-menu').smartmenus({

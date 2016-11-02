@@ -16,12 +16,15 @@ var path = require('path');mongoose.connect("mongodb://localhost/lntwebsite",fun
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
+
 app.get("/clientlist/:id",function(req,res){
  	var id=req.params.id;
- 	client.getClientdetails(id,function(err,data){
+ 	console.log(id);
+ 	custom.getClientData(id,function(err,data){
  		if(err){
  			throw err;
  		}
+ 		console.log(data);
  		res.json(data);
  	})
  })
