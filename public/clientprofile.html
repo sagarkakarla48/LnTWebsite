@@ -79,7 +79,7 @@ margin-top:80px;}
     <li><h2><a href="#">User</a></h2>
       <ul>
         <li><a href="/clientprofile.html">Profile</a></li>
-        <li><a href="/feedbackForm.html">Feedback</a></li>
+        <li><a href="/feedbackForm.html#?id={{clienttable._id}}&name={{clienttable.fname}} {{clienttable.lname}}">Feedback</a></li>
         <li><a href="/login.html">Logout</a></li>
       </ul>
     </li>
@@ -120,18 +120,22 @@ margin-top:80px;}
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
-                      <tr>
-                        <td>First Name:</td>
-                        <td>{{clienttable.fname}}</td>
+                    <tr>
+                        <td>Company Name:</td>
+                        <td>{{clienttable.cname}}</td>
                       </tr>
                       <tr>
-                        <td>Last Name</td>
-                        <td>{{clienttable.lname}}</td>
+                        <td>Client Name:</td>
+                        <td>{{clienttable.fname}} {{clienttable.lname}}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>{{clienttable.email}}</td>
                       </tr>
                       
                         <tr>
-                        <td>Email</td>
-                        <td>{{clienttable.email}}</a></td>
+                        <td>Mobile</td>
+                        <td>{{clienttable.mobile}}</a></td>
                       </tr>
                      
                     </tbody>

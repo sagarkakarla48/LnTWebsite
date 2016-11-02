@@ -33,6 +33,12 @@ var feedbackSchema=mongoose.Schema({
 	q8:{
 		type:String,
 		required:true
+	},
+	clientid:{
+		type:String
+	},
+	clientname:{
+		type:String
 	}
 });
 //module.exports is used for export data
