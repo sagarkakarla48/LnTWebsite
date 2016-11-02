@@ -2,27 +2,21 @@
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+<!-- SmartMenus core CSS (required) -->
+<link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/css/sm-blue.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <style>
 body{
-  /* Safari 4-5, Chrome 1-9 */
-    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
-
-  /* Safari 5.1+, Chrome 10+ */
-    background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
-
-  /* Firefox 3.6+ */
-    background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
-
-  /* IE 10 */
-    background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
     height:600px;
 }
 
 .form-login{
-	margin-top: 250px;
+	margin-top: 100px;
     background-color: #EDEDED;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -60,10 +54,43 @@ h4 {
 .wrapper {
     text-align: center;
 }
+.sm-blue{
+    border-radius: 1px !important;    
+}
+#main-nav{
+    background: #024d87 url(/images/navigationBg.png) right 0 no-repeat;
+        
+}
 </style>
 
 </head>
 <body>
+<div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
+                        <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
+<nav id="main-nav" role="navigation">
+  <!-- Sample menu definition -->
+  <ul id="main-menu" class="sm sm-blue">
+    <li><h2><a href="/index.html">Home</a></h2></li>
+    <li><h2><a href="#">About Us</a></h2>
+    </li>
+    <li><h2><a href="#">Industry</a></h2></li>
+    <li><h2><a href="#">Services</a></h2>
+      
+    </li>
+    <li><h2><a href="#">Solutions</a></h2></li>
+    <li><h2><a href="#">Investors</a></h2></li>
+    <li><h2><a href="#">Newsroom</a></h2></li>
+    <li><h2><a href="#">Insight</a></h2></li>
+    <li><h2><a href="#">Careers</a></h2></li>
+    <li><h2><a href="#">Contact Us</a></h2></li>
+    <li><h2><a href="#">Login</a></h2>
+      <ul>
+        <li><a href="/login.html">Client Login</a></li>
+        <li><a href="/adminlogin.html">Admin login</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <script type="text/javascript" src="floatlabels.js"></script>
 
 <div class="container">
@@ -101,6 +128,23 @@ myForm.pwd.$dirty && myForm.pwd.$invalid" ng-click="submit()"> Login <i class="f
 		   
     </div>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
+    });
+</script>
 <script>
 var app = angular.module('myApp', []);
 app.controller('validateCtrl', function($scope,$window) {

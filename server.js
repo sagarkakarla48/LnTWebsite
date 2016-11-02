@@ -3,6 +3,7 @@ var app=express();
 var mongoose=require("mongoose");
 var bodyParser=require("body-parser");
 var Feedback=require("./models/feedbackdetails");
+var ClientLogin=require("./models/clientlogin");
 var PORT=process.env.PORT || 3000;
 var path = require('path');
 
@@ -19,6 +20,16 @@ app.post("/feedbackList",function(req,res){
 var body=req.body;//will fetch body details
 
 Feedback.addContact(body,function(err,data){
+	if(err){
+		throw err;
+	}
+		res.json(data);
+})
+})
+
+app.post("/clientlogindetails",function(req,res){
+
+ClientLogin.getClientDetails(body,function(err,data){
 	if(err){
 		throw err;
 	}

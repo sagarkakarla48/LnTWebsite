@@ -1,36 +1,18 @@
-<html>
+<html ng-app="loginApp" ng-controller="loginController">
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  
 <!-- SmartMenus core CSS (required) -->
 <link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
 
 <!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
 <link href="/css/sm-blue.css" rel="stylesheet" type="text/css" />
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<!-- SmartMenus jQuery plugin -->
-<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
-
-<!-- SmartMenus jQuery Keyboard Addon -->
-<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
+<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <style>
 body{
-  /* Safari 4-5, Chrome 1-9 */
-    <!-- background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727)); -->
-
-  /* Safari 5.1+, Chrome 10+ */
-    <!-- background: -webkit-radial-gradient(circle, #1a82f7, #2F2727); -->
-
-  /* Firefox 3.6+ */
-   <!--  background: -moz-radial-gradient(circle, #1a82f7, #2F2727); -->
-
-  /* IE 10 */
-    <!-- background: -ms-radial-gradient(circle, #1a82f7, #2F2727); -->
     height:600px;
 }
 
@@ -72,6 +54,14 @@ h4 {
 .wrapper {
     text-align: center;
 }
+.sm-blue{
+    border-radius: 1px !important;    
+}
+#main-nav{
+    background: #024d87 url(/images/navigationBg.png) right 0 no-repeat;
+        
+}
+
 </style>
 </head>
 <body ng-app="">
@@ -122,7 +112,7 @@ h4 {
                             </div>
             <div class="wrapper">
             <span class="group-btn">     
-                <a href="#" class="btn btn-primary btn-md"> Login <i class="fa fa-sign-in"></i></a>
+                <a href="#" class="btn btn-primary btn-md" ng-click="clientLogin();"> Login <i class="fa fa-sign-in"></i></a>
             </span>
 			<div>
                                 <button id="login_lost_btn" type="button" class="btn btn-link">Forgot Password?</button>
@@ -138,5 +128,23 @@ h4 {
         </div>
     </div>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/clientlogin.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
+    });
+</script>
 </body>
 </html>
