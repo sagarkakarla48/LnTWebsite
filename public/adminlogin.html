@@ -62,9 +62,32 @@ h4 {
         
 }
 </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
 
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
+
+    <!-- FlexSlider -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script defer src="/js/jquery.flexslider.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/controller.js"></script>
+  <!-- SmartMenus jQuery init -->
+<script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
+    });
+</script>
 </head>
+
 <body>
+
 <div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
                         <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
 <nav id="main-nav" role="navigation">
@@ -91,6 +114,7 @@ h4 {
     </li>
   </ul>
 </nav>
+
 <script type="text/javascript" src="floatlabels.js"></script>
 
 <div class="container">
@@ -148,8 +172,8 @@ myForm.pwd.$dirty && myForm.pwd.$invalid" ng-click="submit()"> Login <i class="f
 <script>
 var app = angular.module('myApp', []);
 app.controller('validateCtrl', function($scope,$window) {
-    var user1 = 'nikhitha';
-    var pwd1 = 'abc';
+    var user1 = 'admin';
+    var pwd1 = 'admin';
 	$scope.submit=function(){
 	if(user1==$scope.user && pwd1==$scope.pwd){
 	$window.location='studenthome.html';
@@ -160,5 +184,6 @@ app.controller('validateCtrl', function($scope,$window) {
 	}
 });
 </script>
+
 </body>
 </html>

@@ -17,7 +17,10 @@ var clientSchema =mongoose.Schema({
 		required:true
 	}
 });
-var Contact=module.exports=mongoose.model("client",clientSchema);
- module.exports.getContact=function(callback){
- 	Contact.find(callback)
+var client=module.exports=mongoose.model("clienttable",clientSchema);
+ 
+ module.exports.getClientdetails=function(id,callback){
+ 	//to fetch  single record we use findbyid
+ 	var query={_id:id}
+ 	client.findById(query,callback)
  }

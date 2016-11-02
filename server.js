@@ -2,19 +2,29 @@ var express=require("express");
 var app=express();
 var mongoose=require("mongoose");
 var bodyParser=require("body-parser");
+
+var client=require("./models/client");
 var Feedback=require("./models/feedbackdetails");
 var ClientLogin=require("./models/clientlogin");
 var custom=require("./models/clientsignup");
-var PORT=process.env.PORT || 3000;
-var path = require('path');
 
-mongoose.connect("mongodb://localhost/lntwebsite",function(){
-	console.log("successfully connected to mogodb");
+var PORT=process.env.PORT || 3000;
+var path = require('path');mongoose.connect("mongodb://localhost/lntwebsite",function(){
+	console.log("successfully connected");
 });
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
-
+app.get("/clientlist/:id",function(req,res){
+ 	var id=req.params.id;
+ 	client.getClientdetails(id,function(err,data){
+ 		if(err){
+ 			throw err;
+ 		}
+ 		res.json(data);
+ 	})
+ })
 
 app.post("/feedbackList",function(req,res){
 	

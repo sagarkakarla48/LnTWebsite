@@ -99,10 +99,11 @@ h4 {
             <div class="form-login">
 			
             <h4 id="h4">Welcome back.</h4>
-            <input type="text"  class="form-control input-sm" name="email" ng-model="email" placeholder="Username" required>
+
+          Email<input type="text"  class="form-control input-sm" name="email" ng-model="email" placeholder="email" required>
 <span style="color:red" ng-show="myForm.user.$touched && myForm.user.$invalid"> username is required.</span>
             </br>
-            <input type="password" name="pwd" class="form-control input-sm" ng-model="pwd" placeholder="Password" required>
+            Password<input type="password" name="pwd" class="form-control input-sm" ng-model="pwd" placeholder="Password" required>
 <span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">password is required.</span>
           
 			<div class="checkbox">
@@ -112,7 +113,7 @@ h4 {
                             </div>
             <div class="wrapper">
             <span class="group-btn">     
-                <a href="#" class="btn btn-primary btn-md" ng-click="clientLogin();"> Login <i class="fa fa-sign-in"></i></a>
+                <a href="#" class="btn btn-primary btn-md" ng-click="clientLogin();" ng-disabled="myForm.$invalid"> Login <i class="fa fa-sign-in"></i></a>
             </span>
 			<div>
                                 <button id="login_lost_btn" type="button" class="btn btn-link">Forgot Password?</button>
@@ -134,9 +135,10 @@ h4 {
 
 <!-- SmartMenus jQuery Keyboard Addon -->
 <script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
 <script src="/js/bootstrap.min.js"></script>
 <script src="/clientlogincontroller.js"></script>
+
 <script type="text/javascript">
     $(function() {
         $('#main-menu').smartmenus({

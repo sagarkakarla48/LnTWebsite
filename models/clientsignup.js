@@ -35,3 +35,9 @@ module.exports.addDetails=function(details,callback){
 module.exports.getClientDetails=function(email,pwd,callback){
 custom.findOne({'email': email,'pwd':pwd}, callback);
 }
+
+module.exports.getClientdetails=function(id,callback){
+ 	//to fetch  single record we use findbyid
+ 	var query={_id:id}
+ 	custom.findById(query,callback)
+ }
