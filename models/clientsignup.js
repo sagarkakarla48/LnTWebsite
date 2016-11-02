@@ -1,6 +1,10 @@
 var mongoose=require("mongoose");
 
 var customSchema=mongoose.Schema({
+	cname:{
+		type:String,
+		required:true
+	},
 
 	fname:{
 		type:String,
@@ -11,6 +15,10 @@ var customSchema=mongoose.Schema({
 		required:true
 	},
 	email:{
+		type:String,
+		required:true
+	},
+	mobile:{
 		type:String,
 		required:true
 	},
@@ -41,3 +49,6 @@ module.exports.getClientdetails=function(id,callback){
  	var query={_id:id}
  	custom.findById(query,callback)
  }
+
+ 
+ 
