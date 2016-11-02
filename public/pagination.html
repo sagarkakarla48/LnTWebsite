@@ -1,76 +1,63 @@
-<html ng-app=''>
-<head>
-<script src='angular.min.js'></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-#myModal{
-display:none;
-}
-#div1{
-margin:20px;
-}
-img{
-border-radius:50%;
-height:80px;
-width:180px;
-}
-body{
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+    <script type="text/javascript" src="paginationCtrl.js"></script>
+	<script src="dirPagination.js"></script>
   
-background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
-background-repeat:no-repeat;
-margin:auto;
-background-size:100% 100%;
-}
-p,h1,td,th,h3{
- font-family:"Comic Sans MS", cursive, sans-serif;
- 
-}
-
-#div3{
-margin-top: 250px;
-    background-color: #EDEDED;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 15px;
-    border-color:#d2d2d2;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
-margin:50px;
-border-radius:10px;
-}
-th,tr,h1,h3{
-  padding: 30px;
-  color:white;
-  text-align: center;
-}
-
-
-</style>
+  
 <script>
-jQuery(document).ready(function($){
-$('#sub1').click(function(){
-$('#myModal').modal('show');
-});
-})
-
-
+function openpopup(id){
+alert(id);
+}
 </script>
-<head>
-<body>
-<center><h3> Clients Feedback </h3></center>
-<table align='right'><tr><td><input type='text' ng-model='search' name=search required>&nbsp;&nbsp;<input type='submit' value='search'class="btn btn-primary" ></td></tr></table><br><br><br>
-<table align='center' class='table'>
-<tr><th>ClientName</th><th>Feedback</th><th>MoreInfo</th></tr>
-<tr><td>CISCO</td><td>Excellent</td><td><input type='submit' value='More info'class="btn btn-primary" id='sub1'></td></tr>
-</table>
+  </head>
 
+  <body ng-controller="pageCtrl">
+    <div role="main" class="container theme-showcase">
+      <div class="" style="margin-top:90px;">
+        <div class="col-lg-8">
+                    <div class="page-header">
+                        
+                    </div>
+                    <div class="bs-component" > 
+                    </div>
+                </div>
+      </div>
+	  
+  
+	 <form class="form-inline">
+        <div class="form-group">
+            <label >Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>
+	<div class="container bs-component" >
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Company Name</th>
+                                    <th>Feedback Summary</th>
+                                    <th>Feedback</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr dir-paginate="user in filteredItems|itemsPerPage:4|filter:search">
+                                    
+                                    <td>{{user.clientname}}</td>
+                                    <td>{{user.q8}}</td>
+                                                                     
+									                 <td>{{user.q5}}</td>
+                                    <td><a href="index.html#?id={{user._id}}" target="_blank"><input type='button' value='More info'class="btn btn-primary sub1"></a></td>                                </tr>
+                            </tbody>
 
-<div class="modal fade" id="myModal" role="dialog">
+                        </table>
+                        <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
    <div class="modal-content">
         <div class="modal-header">
@@ -131,21 +118,30 @@ $('#myModal').modal('show');
 
 </form>
 </div>
-        </div>
+         
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       
     </div>
-	</div>
+  </div> 
+                    </div>
+						  
+   </body>
+   					<dir-pagination-controls
+                     max-size="10"
+                  direction-links="true"
+                   boundary-links="true" > 
 
+  <style>
+  .sort-icon {
+    font-size: 9px;
+    margin-left: 5px;
+}
 
-
-
-
-</body>
-
-
-
+th {
+    cursor:pointer;
+}
+  </style>
 </html>
