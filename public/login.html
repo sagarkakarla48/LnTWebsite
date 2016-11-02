@@ -122,7 +122,7 @@ h4 {
                             </div>
             <div class="wrapper">
             <span class="group-btn">     
-                <a href="clientprofile.html" class="btn btn-primary btn-md"> Login <i class="fa fa-sign-in"></i></a>
+                <a href="#" class="btn btn-primary btn-md" ng-click="success()" ng-disabled="myForm.$invalid"> Login <i class="fa fa-sign-in"></i></a>
             </span>
 			<div>
                                 <button id="login_lost_btn" type="button" class="btn btn-link">Forgot Password?</button>
@@ -138,6 +138,14 @@ h4 {
         </div>
     </div>
 </div>
+<script>
+var app = angular.module('myapp', []);
+app.controller('mycntrl', function($scope,$window) {
+$scope.success=function(){
+$window.location='clientprofile.html';
+}
+
+});
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!-- SmartMenus jQuery plugin -->
 <script type="text/javascript" src="/js/jquery.smartmenus.js"></script>

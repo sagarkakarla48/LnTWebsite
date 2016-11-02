@@ -164,8 +164,8 @@ myForm.pwd.$dirty && myForm.pwd.$invalid" ng-click="submit()"> Login <i class="f
 <script>
 var app = angular.module('myApp', []);
 app.controller('validateCtrl', function($scope,$window) {
-    var user1 = 'nikhitha';
-    var pwd1 = 'abc';
+    var user1 = 'admin';
+    var pwd1 = 'admin';
 	$scope.submit=function(){
 	if(user1==$scope.user && pwd1==$scope.pwd){
 	$window.location='studenthome.html';
