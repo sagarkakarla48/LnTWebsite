@@ -2,8 +2,18 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SmartMenus core CSS (required) -->
+<link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/css/sm-blue.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="/feedbackcontroller.js"></script>
@@ -15,13 +25,8 @@ display:none;
 margin:20px;
 }
 img{
-border-radius:50%;
-height:80px;
-width:180px;
 }
 body{
-  
-background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
 background-repeat:no-repeat;
 margin:auto;
 background-size:100% 100%;
@@ -45,7 +50,13 @@ margin-top: 250px;
 margin:50px;
 border-radius:10px;
 }
-
+.sm-blue{
+    border-radius: 1px !important;    
+}
+#main-nav{
+    background: #024d87 url(/images/navigationBg.png) right 0 no-repeat;
+        
+}
 
 
 </style>
@@ -60,6 +71,32 @@ $('#myModal').modal('show');
 </script>
 <head>
 <body>
+<div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
+                        <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
+<nav id="main-nav" role="navigation">
+  <!-- Sample menu definition -->
+  <ul id="main-menu" class="sm sm-blue">
+    <li><h2><a href="/index.html">Home</a></h2></li>
+    <li><h2><a href="#">About Us</a></h2>
+    </li>
+    <li><h2><a href="#">Industry</a></h2></li>
+    <li><h2><a href="#">Services</a></h2>
+      
+    </li>
+    <li><h2><a href="#">Solutions</a></h2></li>
+    <li><h2><a href="#">Investors</a></h2></li>
+    <li><h2><a href="#">Newsroom</a></h2></li>
+    <li><h2><a href="#">Insight</a></h2></li>
+    <li><h2><a href="#">Careers</a></h2></li>
+    <li><h2><a href="#">Contact Us</a></h2></li>
+    <li><h2><a href="#">User</a></h2>
+    <ul>
+        <li><a href="/clientprofile.html#?id={{id}}">Profile</a></li>
+        <li><a href="/login.html">logout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <br>
 <!-- <div id='div1'>
 <img src='/css/images/logo.jpg'>
@@ -146,7 +183,15 @@ that you have received so far.We appreciate your business and want to make sure 
 
 
 
-
+<script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
+    });
+</script>
 
 </body>
 

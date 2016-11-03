@@ -23,6 +23,7 @@ $scope.openpopup=function(id){
 			$scope.q6=response.q6;
 			$scope.q7=response.q7;
 			$scope.q8=response.q8;
+			$scope.clientname=response.clientname;
 			popup();
 			}
 			

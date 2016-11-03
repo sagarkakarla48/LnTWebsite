@@ -1,16 +1,36 @@
 <html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
+    <!-- SmartMenus core CSS (required) -->
+<link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/css/sm-blue.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
   <script type="text/javascript" src="paginationCtrl.js"></script>
 	<script src="dirPagination.js"></script>
-  
-  
+<style>
+.sm-blue{
+    border-radius: 1px !important;    
+}
+#main-nav{
+    background: #024d87 url(/images/navigationBg.png) right 0 no-repeat;
+        
+}
+#myModal{
+  z-index:10000;
+}
+</style> 
 <script>
 function popup(){
   $("#myModal").modal("show");
@@ -19,6 +39,28 @@ function popup(){
   </head>
 
   <body ng-controller="pageCtrl">
+  <div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
+                        <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
+<nav id="main-nav" role="navigation">
+  <!-- Sample menu definition -->
+  <ul id="main-menu" class="sm sm-blue">
+    <li><h2><a href="/index.html">Home</a></h2></li>
+    <li><h2><a href="#">About Us</a></h2>
+    </li>
+    <li><h2><a href="#">Industry</a></h2></li>
+    <li><h2><a href="#">Services</a></h2>
+      
+    </li>
+    <li><h2><a href="#">Solutions</a></h2></li>
+    <li><h2><a href="#">Investors</a></h2></li>
+    <li><h2><a href="#">Newsroom</a></h2></li>
+    <li><h2><a href="#">Insight</a></h2></li>
+    <li><h2><a href="#">Careers</a></h2></li>
+    <li><h2><a href="#">Contact Us</a></h2></li>
+    <li><h2><a href="/adminlogin.html">Logout</a></h2>
+    </li>
+  </ul>
+</nav>
     <div role="main" class="container theme-showcase">
       <div class="" style="margin-top:90px;">
         <div class="col-lg-8">
@@ -62,7 +104,7 @@ function popup(){
    <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Feedback</h4>
+          <h4 class="modal-title">{{clientname}} Feedback</h4>
         </div>
         <div class="modal-body">
          
@@ -129,6 +171,16 @@ function popup(){
     </div>
   </div> 
                     </div>
+
+  <script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
+    });
+</script>
 						  
    </body>
    					<dir-pagination-controls
