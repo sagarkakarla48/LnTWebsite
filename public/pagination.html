@@ -75,6 +75,10 @@ function popup(){
   
 	 <form class="form-inline" name="myform">
         <div class="form-group">
+        <label >SearchByComapnyName</label>
+            <input type="text" ng-model="company" class="form-control" placeholder="Searchbycompany">
+            <label >SearchByFeedback</label>
+            <input type="text" ng-model="feed" class="form-control" placeholder="Searchbyfeedback">
             <label >Search</label>
             <input type="text" ng-model="search" class="form-control" placeholder="Search">
         </div>
@@ -89,7 +93,7 @@ function popup(){
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr dir-paginate="user in filteredItems|itemsPerPage:4|filter:search">
+                                <tr dir-paginate="user in filteredItems|itemsPerPage:4|filter:search|filter:{clientname:company}|filter:{q5:feed}">
                                     
                                     <td>{{user.clientname}}</td>
                                     <td>{{user.q8}}</td>
