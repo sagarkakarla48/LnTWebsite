@@ -1,4 +1,4 @@
-html>
+<html>
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,6 +60,10 @@ h4 {
 #main-nav{
     background: #024d87 url(/images/navigationBg.png) right 0 no-repeat;
         
+}
+span
+{
+    color:red;
 }
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -124,15 +128,13 @@ h4 {
 		<form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate align="center">
             
             <h4 id="h4">Admin Login</h4>
-            <input type="text" name="user" class="form-control input-sm chat-input" ng-model="user"  placeholder="username" required/>
-			<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
-<span ng-show="myForm.user.$error.required">Username is required.</span>
-</span>
+           <p align="left" >User Name<span>*</span></p><input type="text" name="user" class="form-control input-sm chat-input" ng-model="user"  placeholder="username" required/>
+			<span style="color:red" ng-show="myForm.user.$touched && myForm.user.$invalid">Username is required.</span>
+
             </br>
-            <input type="password" name="pwd" class="form-control input-sm chat-input" ng-model="pwd"  placeholder="password" required/>
-			<span style="color:red" ng-show="myForm.pwd.$dirty && myForm.pwd.$invalid">
-<span ng-show="myForm.pwd.$error.required">Password is required.</span>
-</span>
+            <p align="left" >Password<span>*</span></p><input type="password" name="pwd" class="form-control input-sm chat-input" ng-model="pwd"  placeholder="password" required/>
+			<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">Password is required.</span>
+
           
 			<div class="checkbox">
                                 <label>

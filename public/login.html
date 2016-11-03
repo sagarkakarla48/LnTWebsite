@@ -61,6 +61,10 @@ h4 {
     background: #024d87 url(/images/navigationBg.png) right 0 no-repeat;
         
 }
+span
+{
+    color:red;
+}
 
 </style>
 </head>
@@ -100,11 +104,16 @@ h4 {
 			
             <h4 id="h4">Welcome back.</h4>
 
-          Email<input type="text"  class="form-control input-sm" name="email" ng-model="email" placeholder="email" required>
-<span style="color:red" ng-show="myForm.user.$touched && myForm.user.$invalid"> username is required.</span>
+           <p align="left" >User Name<span>*</span></p><input type="email" name="email" class="form-control input-sm" ng-model="custom.email" placeholder="Email" required>
+
+<span style="color:red" ng-show="myForm.email.$touched && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">User name is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid User Name.</span>
+</span>
             </br>
-            Password<input type="password" name="pwd" class="form-control input-sm" ng-model="pwd" placeholder="Password" required>
-<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">password is required.</span>
+             <p align="left" >Password<span>*</span></p><input type="password" name="pwd" class="form-control input-sm" ng-model="pwd" placeholder="Password" required>
+<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">Password is required.</span>
+
           
 			<div class="checkbox">
                                 <label>
@@ -115,10 +124,7 @@ h4 {
             <span class="group-btn">     
                 <a href="#" class="btn btn-primary btn-md" ng-click="clientLogin();" ng-disabled="myForm.$invalid"> Login <i class="fa fa-sign-in"></i></a>
             </span>
-			<div>
-                                <button id="login_lost_btn" type="button" class="btn btn-link">Forgot Password?</button>
-                                
-                            </div>
+			
 							<div>
                                 <p>Are you new client? <a href="signup.html"><b>Sign Up</b></span></a> here</p>
                                 

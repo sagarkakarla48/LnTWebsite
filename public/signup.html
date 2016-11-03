@@ -29,6 +29,10 @@ label.label-floatlabel {
     color: #46b8da;
     font-size: 11px;
 }
+span
+{
+    color:red;
+}
 </style>
 </head>
 <body ng-app='myApp' ng-controller='myController'>
@@ -69,32 +73,35 @@ label.label-floatlabel {
 			 			</div>
 			 			<div class="panel-body">
             <div class="form-group">
-                Company Name<input type="text" name="cname" class="form-control input-sm" ng-model="custom.cname" placeholder="Client Name" required>
+                <p align="left" >Company Name<span>*</span></p><input type="text" name="cname" class="form-control input-sm" ng-model="custom.cname" placeholder="Client Name" required>
                 <span style="color:red" ng-show="myForm.cname.$touched && myForm.cname.$invalid">Company name is required.</span>
                 </div>
 			    	<div class="row">
 			    	<div class="col-xs-6 col-sm-6 col-md-6">
 			    					
 				<div class="form-group">
-			                First Name<input type="text" name="fname" class="form-control input-sm" ng-model="custom.fname" placeholder="First Name" required>
+			                <p align="left" >First Name<span>*</span></p><input type="text" name="fname" class="form-control input-sm" ng-model="custom.fname" placeholder="First Name" required>
 <span style="color:red" ng-show="myForm.fname.$touched && myForm.fname.$invalid">first name is required.</span>
 								</br>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						Last Name<input type="text" name="lname" class="form-control input-sm" ng-model="custom.lname" placeholder="Last Name" required>
+			    						<p align="left" >Last Name<span>*</span></p><input type="text" name="lname" class="form-control input-sm" ng-model="custom.lname" placeholder="Last Name" required>
 <span style="color:red" ng-show="myForm.lname.$touched && myForm.lname.$invalid">Last name is required.</span>
 			    					</div>
 			    				</div>
-			    			</div>
+			    		</div>
                 
                 <div class="form-group">
-                Mobile Number<input type="text" name="mobile" class="form-control input-sm" ng-model="custom.mobile" placeholder="Mobile Number" required>
+                <p align="left" >Mobile Number<span>*</span></p><input type="text" name="mobile" class="form-control input-sm" ng-model="custom.mobile" ng-pattern="[0-9]{10}" ng-minlength=10 ng-maxlength=10 placeholder="Mobile Number"  required onkeypress="return event.charCode>=48 && event.charCode<=57">
                 <span style="color:red" ng-show="myForm.mobile.$touched && myForm.mobile.$invalid">Mobile Number is required.</span>
+                <span class="error" ng-show="myForm.mobile.$error.minlength">Phone should be 10 numbers.</span>
+                <span class="error" ng-show="myForm.mobile.$error.maxlength">Phone should be 10 numbers.</span>
+                
                 </div>
 <div class="form-group">
-			    				Email<input type="email" name="email" class="form-control input-sm" ng-model="custom.email" placeholder="Email" required>
+			    				<p align="left" >Email<span>*</span></p><input type="email" name="email" class="form-control input-sm" ng-model="custom.email" placeholder="Email" required>
 
 <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
 <span ng-show="myForm.email.$error.required">Email is required.</span>
@@ -105,17 +112,19 @@ label.label-floatlabel {
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						Password<input type="password" name="pwd" id="pwd" class="form-control input-sm" ng-model="custom.pwd" ng-minlength=6 ng-maxlength=12 placeholder="Password" required>
-
-<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">Password is required OR shortlength.</span>
+			    						<p align="left" >Password<span>*</span></p><input type="password" name="pwd" id="pwd" class="form-control input-sm" ng-model="custom.pwd" ng-minlength=6 ng-maxlength=12 placeholder="Password" required>
+<span style="color:red" ng-show="myForm.pwd.$error.minlength">
+        Your Password Should Contain Atleast 6 Characters</span>
+<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">Password is required .</span>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 
-			    						Confirm Password<input type="password" name="cpwd" id="cpwd" class="form-control input-sm" ng-model="custom.cpwd" ng-minlength=6 ng-maxlength=12 placeholder="confirm Password" required onchange="validate()">
-<span  style="color:red" ng-show="myForm.cpwd.$touched && myForm.cpwd.$invalid">confirm password is required or shortlength.</span>
+			    						<p align="left" >Confirm Password<span>*</span></p><input type="password" name="cpwd" id="cpwd" class="form-control input-sm" ng-model="custom.cpwd" ng-minlength=6 ng-maxlength=12 placeholder="confirm Password" required onchange="validate()">
+<span  style="color:red" ng-show="myForm.cpwd.$touched && myForm.cpwd.$invalid">confirm password is required </span>
 <span style="color:red" id="s1" ></span>
+<span style="color:green" id="s2" ></span>
 			   </div>
 			    				</div>
 			    			</div>
@@ -134,13 +143,13 @@ label.label-floatlabel {
 function validate(){
   var pwd1=document.getElementById('pwd').value;
   var cpwd1=document.getElementById('cpwd').value;
-  alert(pwd1+" "+cpwd1);
+  
   if(pwd1==cpwd1){
-
+document.getElementById('s1').innerText=""
   }
   else{
-    document.getElementById('submit').disabled=true;
-document.getElementById('s1').innerHTML="passwords are mismatched";
+   
+document.getElementById('s1').innerText="passwords are mismatched";
   }
 }
 </script>
