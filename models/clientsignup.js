@@ -48,3 +48,6 @@ custom.findOne({'email': email,'pwd':pwd}, callback);
  	var query={_id:id}
  	custom.findById(query,callback)
  }
+ module.exports.checkClientEmail=function(email,callback){
+ 	custom.findOne({'email': email}, callback);
+ }

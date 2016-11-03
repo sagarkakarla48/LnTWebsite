@@ -76,3 +76,8 @@ module.exports.deleteContact=function(id,callback){
 var query={_id:id};
 Feedback.remove(query,callback);
 }
+
+module.exports.getFeedById=function(id,callback){
+var query={_id:id};
+Feedback.findById(query,callback);
+}
