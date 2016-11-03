@@ -27,6 +27,18 @@ app.get("/clientlist/:id",function(req,res){
  	})
  })
 
+app.get("/clientdupcheck/:email",function(req,res){
+ 	var email=req.params.email;
+ 	console.log(email);
+ 	custom.checkClientEmail(email,function(err,data){
+ 		if(err){
+ 			throw err;
+ 		}
+ 		console.log(data);
+ 		res.json(data);
+ 	})
+ })
+
 app.post("/feedbackList",function(req,res){
 	
 var body=req.body;//will fetch body details
