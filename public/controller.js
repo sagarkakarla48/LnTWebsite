@@ -16,19 +16,4 @@ setTimeout(function(){
       })
 	  },10);
 });
-
-$scope.insert=function(){
-
-$http.post('/signup',$scope.custom).success(function(res){
-
-		console.log('entered into signup controller');
-		console.log($scope.custom)
-    if(res!=null)
-    {
-      alert("Registered successfully");
-    window.location='login.html';
-    }
-	})
-}
-
 }]);

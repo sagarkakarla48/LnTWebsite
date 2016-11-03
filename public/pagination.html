@@ -12,6 +12,9 @@
   
   
 <script>
+function popup(){
+  $("#myModal").modal("show");
+}
 </script>
   </head>
 
@@ -59,57 +62,59 @@
    <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Thank you for your valuable feedback</h4>
+          <h4 class="modal-title">Feedback</h4>
         </div>
         <div class="modal-body">
          
 
 <form name='f1' >
-<p>Your First impression about our company?</p>
-<textarea rows='5' cols='35' ng-model='q1' name='q1' placeholder='Reputed Organization' readonly="readonly"></textarea>
 
 <p>Do you find our work force is technically Sound?</p>
-<p><input type='radio' ng-model='q2' name='q2' value='extreamly good' checked='true'>Extreamly good<br>
-<input type='radio' ng-model='q2' name='q2' value='good'>good<br>
-<input type='radio' ng-model='q2' name='q2' value='adequate'>Adequate<br>
-<input type='radio' ng-model='qq2' name='q2' value='poor'>Poor<br></p>
+<p><input type='radio' ng-model='q2' name='q2' value='extreamly good' checked='true' disabled>Extreamly good<br>
+<input type='radio' ng-model='q2' name='q2' value='good' disabled>good<br>
+<input type='radio' ng-model='q2' name='q2' value='adequate' disabled>Adequate<br>
+<input type='radio' ng-model='q2' name='q2' value='poor' disabled>Poor<br></p>
 
 <p>Would you use our service in the future?</p>
 <p>
-<input type='radio' ng-model='q3' name='q3' value='definitely' checked='true'> Definitely<br>
-<input type='radio' ng-model='q3' name='q3' value='Probably'>Probably<br>
-<input type='radio' ng-model='q3' name='q3' value='Not sure'>Not sure<br>
-<input type='radio' ng-model='q3' name='q3' value='probably not'>probably not<br>
-<input type='radio' ng-model='q3' name='q3' value='Definitely Not'>Definitely Not</p>
+<input type='radio' ng-model='q3' name='q3' value='definitely' checked='true' disabled> Definitely<br>
+<input type='radio' ng-model='q3' name='q3' value='Probably' disabled>Probably<br>
+<input type='radio' ng-model='q3' name='q3' value='Not sure' disabled>Not sure<br>
+<input type='radio' ng-model='q3' name='q3' value='probably not' disabled>probably not<br>
+<input type='radio' ng-model='q3' name='q3' value='Definitely Not' disabled>Definitely Not</p>
 <p>
 <p>Thinking of similar products / services offered by other companies, how would you compare the product 
 / service offered by our company?</p>
-<p><input type='radio' ng-model='q4' name='q4' value='much better' >Much Better<br>
-<input type='radio' ng-model='q4' name='q4' value='somewhat better' checked='true'>Somewhat Better<br>
-<input type='radio' ng-model='q4' name='q4' value='about the same'>About the same<br>
-<input type='radio' ng-model='q4' name='q4' value='somewhat worse'>Somewhat Worse<br>
-<input type='radio' ng-model='q4' name='q4' value='much worse'>Much Worse</p>
+<p><input type='radio' ng-model='q4' name='q4' value='much better' disabled>Much Better<br>
+<input type='radio' ng-model='q4' name='q4' value='somewhat better' checked='true' disabled>Somewhat Better<br>
+<input type='radio' ng-model='q4' name='q4' value='about the same' disabled>About the same<br>
+<input type='radio' ng-model='q4' name='q4' value='somewhat worse' disabled>Somewhat Worse<br>
+<input type='radio' ng-model='q4' name='q4' value='much worse' disabled>Much Worse</p>
 <p>Overall, how satisfied were you with the service?</p>
 <p>
-<input type='radio' ng-model='q5' name='q5'value='very satisfied' > Very Satisfied<br>
-<input type='radio' ng-model='q5' name='q5'value='satisfied' checked='true'>Satisfied<br>
-<input type='radio' ng-model='q5' name='q5'value='Netral'>Neutral<br>
-<input type='radio' ng-model='q5' name='q5'value='unsatisfied'>UnSatisfied<br>
-<input type='radio' ng-model='q5' name='q5' value='very unsatisfied'>very UnSatisfied</p>
+<input type='radio' ng-model='q5' name='q5'value='very satisfied' disabled> Very Satisfied<br>
+<input type='radio' ng-model='q5' name='q5'value='satisfied' checked='true' disabled>Satisfied<br>
+<input type='radio' ng-model='q5' name='q5'value='Netral' disabled>Neutral<br>
+<input type='radio' ng-model='q5' name='q5'value='unsatisfied' disabled>UnSatisfied<br>
+<input type='radio' ng-model='q5' name='q5' value='very unsatisfied' disabled>very UnSatisfied</p>
 
 <p>Would you recommend our product / service to colleagues or contacts within your industry?</p>
 <p>
-<input type='radio' ng-model='q6' name='q6'value='definitely' checked='true'>yes,I would Definitely<br>
-<input type='radio' ng-model='q6' name='q6'value='Probably'>May not<br>
+<input type='radio' ng-model='q6' name='q6'value='definitely' checked='true' disabled>yes,I would Definitely<br>
+<input type='radio' ng-model='q6' name='q6'value='Probably' disabled>May not<br>
 </p>
 <p>How responsive is LTTS in supporting srvices and solving issues?</p>
 <p>
-<input type='radio' ng-model='q7' name='q7' value='very instantive' > Very Instantive<br>
-<input type='radio' ng-model='q7' name='q7' value='instantive' checked='true'>Instantive<br>
-<input type='radio' ng-model='q7' name='q7' value='delay'>Delay<br>
-<input type='radio' ng-model='q7' name='q7' value='not responsive' >Not Respondive<br>
+<input type='radio' ng-model='q7' name='q7' value='very instantive' disabled> Very Instantive<br>
+<input type='radio' ng-model='q7' name='q7' value='instantive' checked='true' disabled>Instantive<br>
+<input type='radio' ng-model='q7' name='q7' value='delay' disabled>Delay<br>
+<input type='radio' ng-model='q7' name='q7' value='not responsive' disabled>Not Respondive<br>
 <p>Do you have any suggestions to improve our product and service?</p>
-<textarea rows='5' cols='35' ng-model='q8' name='q8' placeholder='All the best'></textarea><br><br>
+<textarea rows='5' cols='35' ng-model='q8' name='q8' disabled></textarea>
+
+<!-- <p>Your First impression about our company?</p>
+<textarea rows='5' cols='35' ng-model='q1' name='q1'  disabled></textarea>
+<br> --><br>
 
 
 

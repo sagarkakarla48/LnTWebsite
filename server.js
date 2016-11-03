@@ -53,14 +53,12 @@ custom.getClientDetails(email,pwd,function(err,data){
 })
 })
 app.post("/signup",function(req,res){
-
 var body=req.body;//using body parser
-custom.addDetails(body,function(err,data){
 
+custom.addDetails(body,function(err,data){
 	if(err){
 		throw err;
 	}
-	console.log(data);
 	res.json(data);
 })
 })
@@ -77,6 +75,18 @@ Feedback.getContacts(function(err,data){
 })
 
 })
+
+app.get("/popup/:id",function(req,res){
+ 	var id=req.params.id;
+ 	console.log(id);
+ 	Feedback.getFeedById(id,function(err,data){
+ 		if(err){
+ 			throw err;
+ 		}
+ 		console.log(data);
+ 		res.json(data);
+ 	})
+ })
 
 app.listen(PORT,function(){
 	console.log("Server is running in number "+PORT);
