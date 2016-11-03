@@ -3,9 +3,7 @@ var app=express();
 var mongoose=require("mongoose");
 var bodyParser=require("body-parser");
 
-var client=require("./models/client");
 var Feedback=require("./models/feedbackdetails");
-var ClientLogin=require("./models/clientlogin");
 var custom=require("./models/clientsignup");
 
 var PORT=process.env.PORT || 3000;
@@ -65,6 +63,19 @@ custom.addDetails(body,function(err,data){
 	console.log(data);
 	res.json(data);
 })
+})
+
+app.get("/pagination", function(request,response){
+Feedback.getContacts(function(err,data){
+
+	if(err){
+		throw err;
+	}
+	console.log("hello");
+	console.log(data)
+	response.json(data);
+})
+
 })
 
 app.listen(PORT,function(){
