@@ -105,22 +105,22 @@ label.label-floatlabel {
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						Password<input type="password" name="pwd" class="form-control input-sm" ng-model="custom.pwd" ng-minlength=6 ng-maxlength=12 placeholder="Password" required>
+			    						Password<input type="password" name="pwd" id="pwd" class="form-control input-sm" ng-model="custom.pwd" ng-minlength=6 ng-maxlength=12 placeholder="Password" required>
 
-<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">Password is required.</span>
+<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">Password is required OR shortlength.</span>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 
-			    						Confirm Password<input type="password" name="cpwd" class="form-control input-sm" ng-model="custom.cpwd" ng-minlength=6 ng-maxlength=12 placeholder="confirm Password" required>
-<span  style="color:red" ng-show="myForm.cpwd.$touched && myForm.cpwd.$invalid">confirm password is required.</span>
-
+			    						Confirm Password<input type="password" name="cpwd" id="cpwd" class="form-control input-sm" ng-model="custom.cpwd" ng-minlength=6 ng-maxlength=12 placeholder="confirm Password" required onchange="validate()">
+<span  style="color:red" ng-show="myForm.cpwd.$touched && myForm.cpwd.$invalid">confirm password is required or shortlength.</span>
+<span style="color:red" id="s1" ></span>
 			   </div>
 			    				</div>
 			    			</div>
 			    			
-			    			<input type="submit" value="Register" class="btn btn-info btn-block" ng-click="insert()" ng-disabled="myForm.$invalid">
+			    			<input type="submit" id="submit" value="Register" class="btn btn-info btn-block" ng-click="insert()" ng-disabled="myForm.$invalid">
 			    		
 			    		
 			    	</div>
@@ -130,6 +130,20 @@ label.label-floatlabel {
     	</div>
     </div>
 </body>
+<script>
+function validate(){
+  var pwd1=document.getElementById('pwd').value;
+  var cpwd1=document.getElementById('cpwd').value;
+  alert(pwd1+" "+cpwd1);
+  if(pwd1==cpwd1){
+
+  }
+  else{
+    document.getElementById('submit').disabled=true;
+document.getElementById('s1').innerHTML="passwords are mismatched";
+  }
+}
+</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!-- SmartMenus jQuery plugin -->
 <script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
